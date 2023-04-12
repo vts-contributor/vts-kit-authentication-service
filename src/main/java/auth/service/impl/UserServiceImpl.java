@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public MessageResponse register(SignUpFormRequest signUpFormRequest) {
+    public MessageResponse registerWithUserRole(SignUpFormRequest signUpFormRequest) {
         String valid = validationSignUpFormRequest(signUpFormRequest);
         if (valid != null)
             return new ErrorMessageResponse(valid);

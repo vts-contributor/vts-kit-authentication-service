@@ -5,6 +5,6 @@ import auth.request.SignUpFormRequest;
 import auth.response.MessageResponse;
 
 public interface UserService {
-    MessageResponse register(SignUpFormRequest signUpFormRequest);
+    MessageResponse registerWithUserRole(SignUpFormRequest signUpFormRequest);
     MessageResponse login(LoginFormRequest loginFormRequest);
 }

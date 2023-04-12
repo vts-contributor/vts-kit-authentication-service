@@ -23,7 +23,7 @@ public class AccountController {
 
     @PostMapping(value = "/register")
     public ResponseEntity<MessageResponse> register(@Validated @RequestBody SignUpFormRequest signUpFormRequest) {
-        return ResponseEntity.ok(userService.register(signUpFormRequest));
+        return ResponseEntity.ok(userService.registerWithUserRole(signUpFormRequest));
     }
 
     @PostMapping(value = "/login")

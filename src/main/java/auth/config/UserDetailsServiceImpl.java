@@ -1,5 +1,6 @@
 package auth.config;
 
+import auth.common.UserConstants;
 import auth.entity.User;
 import auth.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(mail)
-                .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + mail));
+                .orElseThrow(() -> new UsernameNotFoundException(UserConstants.INVALID_ACCOUNT));
 
         return JwtDetails.build(user);
     }
